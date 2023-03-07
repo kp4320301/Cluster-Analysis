@@ -18,6 +18,12 @@ jobs:
             sudo apt-get install wget
             wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
             gzip -d GoogleNews-vectors-negative300-SLIM.bin.gz
+  test: # test algorithm in minimal scope
+    executor: python/default
+    steps:
+      - run:
+          name: test algorithm
+          command: python3 code/score.py --clustering_algo KMeans --vocab vocab.txt --entities word2vec
 
 #  test: # test minimal scope
 
