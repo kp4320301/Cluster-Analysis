@@ -12,6 +12,9 @@ jobs:
       - run:
           name: install dependencies
           command: pip install -r requirements.txt
+      - run:
+          name: download model
+          command: wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
 
 workflows:
   build_and_test: # this can be any name you choose
