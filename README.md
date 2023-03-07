@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/github/maciejskorski/Cluster-Analysis.svg?style=svg)](<LINK>)
+
 Tired of Topic Models? Clusters of Pretrained Word Embeddings Make for Fast and Good Topics too! (2020; Code for paper)
 ==============================
 
