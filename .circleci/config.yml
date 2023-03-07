@@ -3,7 +3,7 @@ orbs:
   python: circleci/python@2.0.3 # provides predefined jobs and commands
 
 jobs:
-  build: # prepare environment (name chosen)
+  build_and_test: # prepare environment (name chosen)
     executor: python/default
     steps:
       - checkout # predefined
@@ -13,22 +13,16 @@ jobs:
           name: install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: download model binaries
+          name: download model binaries # requires external binaries
           command: |
             sudo apt-get install wget
             wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
             gzip -d GoogleNews-vectors-negative300-SLIM.bin.gz
-  test: # test algorithm in minimal scope
-    executor: python/default
-    steps:
       - run:
-          name: test algorithm
+          name: test algorithm # run with minimal scope
           command: python3 code/score.py --clustering_algo KMeans --vocab vocab.txt --entities word2vec
-
-#  test: # test minimal scope
 
 workflows:
   build_and_test:
     jobs:
-    - build
-    - test
+    - build_and_test
