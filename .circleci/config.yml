@@ -1,22 +1,26 @@
 version: 2.1
 orbs:
-  python: circleci/python@2.0.3
+  python: circleci/python@2.0.3 # provides predefined jobs and commands
 
 jobs:
-  build: # this can be any name you choose
+  build: # prepare environment (name chosen)
     executor: python/default
     steps:
-      - checkout
-      - python/install-packages:
+      - checkout # predefined
+      - python/install-packages: # comes with the orb (inspect CircleCI for details)
           pkg-manager: pip
       - run:
           name: install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: download model
-          command: wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
+          name: download model binaries
+          command: \
+            wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
+            gzip -d GoogleNews-vectors-negative300-SLIM.bin.gz
+
+  test: # test minimal scope
 
 workflows:
-  build_and_test: # this can be any name you choose
+  build_and_test:
     jobs:
     - build
