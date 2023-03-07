@@ -18,7 +18,7 @@ jobs:
             wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
             gzip -d GoogleNews-vectors-negative300-SLIM.bin.gz
 
-  test: # test minimal scope
+#  test: # test minimal scope
 
 workflows:
   build_and_test:
