@@ -17,7 +17,6 @@ import random
 
 NSEEDS = 5
 
-# python3 code/score.py --clustering_algo KMeans --vocab /usr/share/dict/words --entities word2vec
 
 def main():
     args = parse_args()
