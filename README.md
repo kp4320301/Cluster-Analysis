@@ -1,3 +1,4 @@
+[![Python 3.10](https://img.shields.io/badge/python-3.10-blue.svg)](https://www.python.org/downloads/release/python-310/)
 [![CircleCI](https://circleci.com/gh/maciejskorski/Cluster-Analysis.svg?style=shield)](https://app.circleci.com/pipelines/github/maciejskorski/Cluster-Analysis)
 
 Tired of Topic Models? Clusters of Pretrained Word Embeddings Make for Fast and Good Topics too! (2020; Code for paper)
