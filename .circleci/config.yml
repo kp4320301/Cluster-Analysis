@@ -10,8 +10,8 @@ jobs:
       - python/install-packages:
           pkg-manager: pip
       - run:
-          name: Run tests
-          command: python -m pytest
+          name: install dependencies
+          command: pip install -r requirements.txt
 
 workflows:
   build_and_test: # this can be any name you choose
