@@ -11,11 +11,8 @@ This repo fixes reproducibility problems with the implementation of the paper [T
 * Install requirements by `pip install -r requirements.txt`. 
 * Download pre-trained models, for example 
 ```bash
-wget https://figshare.com/ndownloader/files/10798046 -O GoogleNews-vectors-negative300.bin
-``` 
-or for a smaller model
-```bash
-wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
+wget https://figshare.com/ndownloader/files/10798046 -O GoogleNews-vectors-negative300.bin # small model
+wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz # large model
 gzip GoogleNews-vectors-negative300-SLIM.bin.gz
 ```
 * To cluster the word embeddings to discover the latent topics, run
