@@ -17,7 +17,6 @@ import random
 
 NSEEDS = 5
 
-
 def main():
     args = parse_args()
 
@@ -46,7 +45,6 @@ def main():
 
         ft = fasttext.load_model(ftfn)
         intersection, words_index_intersect = create_entities_ft(ft, train_w_to_f_mult, args.doc_info)
-        print(intersection.shape)
     elif args.entities == "KG" or args.entities == "glove" :
         elmomix = [float(a) for a in args.elmomix.split(";")] if args.elmomix != "" else None
         data, word_index = read_entity_file(args.entities_file, args.id2name, train_word_to_file, args.entities, elmomix=elmomix)
@@ -87,7 +85,6 @@ def main():
 
     test_word_to_file, test_word_to_file_mult, test_files = create_vocab_and_files(stopwords, args.dataset,args.preprocess, "test", vocab)
     test_files_num = len(test_files)
-
 
 
 
