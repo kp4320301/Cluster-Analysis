@@ -13,7 +13,7 @@ jobs:
           name: install dependencies
           command: pip install -r requirements.txt
       - run:
-          name: download model binaries # requires external binaries
+          name: download model binaries # requires external binaries (model)
           command: |
             sudo apt-get install wget
             wget https://github.com/eyaler/word2vec-slim/raw/master/GoogleNews-vectors-negative300-SLIM.bin.gz
